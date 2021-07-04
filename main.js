@@ -110,6 +110,7 @@ function drawUI() {
   ctx.fillText("View Branches [b]", canvas.width - 10, 50);
   ctx.fillText("View Points [p]", canvas.width - 10, 75);
   ctx.fillText("View UI [u]", canvas.width - 10, 100);
+  ctx.fillText("Run/Stop [r]", canvas.width - 10, 125);
 }
 
 function draw() {
@@ -139,19 +140,21 @@ function toggleMode() {
 }
 
 function update() {
-  let time = new Date();
-  if (timeMode == TMODE_SW)
-    time = new Date(time.getTime() - startTime.getTime());
+  if (running) {
+    let time = new Date();
+    if (timeMode == TMODE_SW)
+      time = new Date(time.getTime() - startTime.getTime());
 
-  seconds = time.getSeconds() + time.getMilliseconds() * 0.001;
-  minutes = time.getMinutes() + seconds / 60;
-  hours = time.getHours() + minutes / 60;
-  if (shiftColours && ++colourCounter > 5) {
-    colourCounter -= 5;
-    fractalColour = changeHue(fractalColour, 1);
-    pointColour = changeHue(pointColour, 2);
+    seconds = time.getSeconds() + time.getMilliseconds() * 0.001;
+    minutes = time.getMinutes() + seconds / 60;
+    hours = time.getHours() + minutes / 60;
+    if (shiftColours && ++colourCounter > 5) {
+      colourCounter -= 5;
+      fractalColour = changeHue(fractalColour, 1);
+      pointColour = changeHue(pointColour, 2);
+    }
+    draw();
   }
-  draw();
 }
 
 //-----main function-----//
@@ -205,10 +208,14 @@ document.onkeydown = function (event) {
     case "=":
       maxDepth = Math.min(15, maxDepth + 1);
       break;
+    case "r":
+      running = !running;
+      break;
   }
   depth = maxDepth;
 };
 
+let running = true;
 let viewClock = true;
 let viewBranches = true;
 let viewPoints = true;
