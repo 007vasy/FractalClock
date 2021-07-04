@@ -59,6 +59,7 @@ function drawClock(){
 
 function drawBranch(point, dir, size, depth, ratio){
 	let newPoint = point.add(Vector2.fromAngle(dir, size*ratio));
+
 	drawLine(point, newPoint);
 	drawFractal(newPoint, dir, size*ratio, depth-1);
 }
@@ -128,8 +129,8 @@ function update(){
 	seconds = time.getSeconds() + time.getMilliseconds()*0.001;
 	minutes = time.getMinutes() + seconds/60;
 	hours = time.getHours() + minutes/60;
-	if(shiftColours && ++colourCounter > 65){
-		colourCounter -= 65;
+	if(shiftColours && ++colourCounter > 5){
+		colourCounter -= 5;
 		fractalColour = changeHue(fractalColour, 1);
 		pointColour = changeHue(pointColour, 2);
 	}
@@ -137,7 +138,7 @@ function update(){
 }
 
 //-----main function-----//
-const CLOCK_RADIUS = 150;
+const CLOCK_RADIUS = 200;
 const MODE_MS = 3;
 const MODE_HM = 6;
 const MODE_HMS = 7;

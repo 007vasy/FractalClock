@@ -27,3 +27,8 @@ The program has several options that the user can select:
 
 - [HackerPoet](https://github.com/HackerPoet/FractalClock) for the original C++ version this was inspired by.
 - [SunnyRed](https://stackoverflow.com/questions/17433015/change-the-hue-of-a-rgb-color-in-javascript) for the code to shift the hue of a colour.
+- [charsleyj](https://github.com/007vasy/FractalClock) for the code in JS
+
+## Todo
+- add gradient from root to end
+- ?only do fractals on the branch maching the root branch (second arm -> only second arm fractal)?
