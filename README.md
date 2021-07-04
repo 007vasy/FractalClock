@@ -30,5 +30,5 @@ The program has several options that the user can select:
 - [charsleyj](https://github.com/007vasy/FractalClock) for the code in JS
 
 ## Todo
-- add gradient from root to end
+- add gradient from root to end -> figure out how
 - ?only do fractals on the branch maching the root branch (second arm -> only second arm fractal)?
