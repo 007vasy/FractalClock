@@ -13,15 +13,11 @@ The program has several options that the user can select:
 - Toggle whether the colours shift overtime or stay the same.
 - Adjust the level of detail of the fractal.
 
-
-
 ## Possible Extensions
 
 - Include common clock modes, including current time, a timer, and a stopwatch
 - Additional digital display, possibly with different layouts
 - Mouse/Touchscreen controls
-
-
 
 ## Credit
 
@@ -30,5 +26,6 @@ The program has several options that the user can select:
 - [charsleyj](https://github.com/007vasy/FractalClock) for the code in JS
 
 ## Todo
-- add gradient from root to end -> figure out how, .stroke()
+
+- add gradient from root to end -> figure out how, change lineTo to line to allow color attribute
 - ?only do fractals on the branch maching the root branch (second arm -> only second arm fractal)?

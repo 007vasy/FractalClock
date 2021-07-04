@@ -26,9 +26,11 @@ function clear() {
   points = new Array();
 }
 
-function drawLine(v1, v2) {
+function drawLine(v1, v2, depth = maxDepth) {
+  //ctx.strokeStyle = changeHue(fractalColour, depth);
   ctx.moveTo(v1.x + canvas.width / 2, v1.y + canvas.height / 2);
   ctx.lineTo(v2.x + canvas.width / 2, v2.y + canvas.height / 2);
+  //ctx.stroke();
 }
 
 function drawMarks(num, size, width) {
@@ -74,7 +76,7 @@ function drawClock() {
 function drawBranch(point, dir, size, depth, ratio) {
   let newPoint = point.add(Vector2.fromAngle(dir, size * ratio));
 
-  drawLine(point, newPoint);
+  drawLine(point, newPoint, depth);
   drawFractal(newPoint, dir, size * ratio, depth - 1);
 }
 
