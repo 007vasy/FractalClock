@@ -80,6 +80,7 @@ function drawPoints(){
 	for(let v of points){
 		ctx.fillRect(v.x + canvas.width/2, v.y + canvas.height/2, 1, 1);
 	}
+	ctx.stroke()
 }
 
 function drawUI(){
@@ -132,7 +133,7 @@ function update(){
 	if(shiftColours && ++colourCounter > 5){
 		colourCounter -= 5;
 		fractalColour = changeHue(fractalColour, 1);
-		pointColour = changeHue(pointColour, 2);
+		pointColour = changeHue(pointColour, -2);
 	}
 	draw();
 }
